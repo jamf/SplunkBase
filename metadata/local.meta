@@ -1,0 +1,39 @@
+[props/source%3A%3A...ta-jamf-addon-for-splunk%2A.log%2A]
+owner = admin
+version = 7.3.0
+modtime = 1564773615.519485000
+
+[props/source%3A%3A...ta_jamf_addon_for_splunk%2A.log%2A]
+owner = admin
+version = 7.3.0
+modtime = 1564773615.611752000
+
+[passwords/credential%3A__REST_CREDENTIAL__%23TA-jamf-addon-for-splunk%23data%2Finputs%2Fjamf%3Atrialinputone%60%60splunk_cred_sep%60%601%3A]
+owner = admin
+version = 7.3.0
+modtime = 1564774384.466342000
+
+[passwords/credential%3A__REST_CREDENTIAL__%23TA-jamf-addon-for-splunk%23data%2Finputs%2Fjamf%3Atrialinputone%60%60splunk_cred_sep%60%602%3A]
+owner = admin
+version = 7.3.0
+modtime = 1564774384.471684000
+
+[inputs/jamf%3A%2F%2Ftrialinputone]
+owner = admin
+version = 7.3.0
+modtime = 1564774384.786172000
+
+[props/JamfModularInput]
+owner = admin
+version = 7.3.1
+modtime = 1566917510.098435000
+
+[panels/extension_attribute_by_department]
+owner = admin
+version = 7.3.1
+modtime = 1569936213.705824000
+
+[props/jamf_test]
+owner = admin
+version = 7.3.1
+modtime = 1576523101.339402000
