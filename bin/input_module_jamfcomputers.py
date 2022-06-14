@@ -118,6 +118,7 @@ def collect_events(helper, ew):
 
         if index is not None:
             event = helper.new_event(data=json.dumps(thisEvent, ensure_ascii=False), source=source, time=eventTime,
+                                     index=index,
                                      host=host,
                                      sourcetype=sourcetype)
         else:
@@ -141,8 +142,7 @@ def collect_events(helper, ew):
                     'operator': '>'
                 }
             except:
-                errors.append(
-                    {'type': 'Filter Value Error', 'value': settings['computerCollection']['daysSinceContact']})
+                helper.log_error("Error applying filter=daysSinceContact with value=%s please check TA configuration and ensure that daysSinceContact is configured with a positive integer value" % settings['computerCollection']['daysSinceContact'])
 
         sections = settings['computerCollection']['sections']
 
@@ -196,4 +196,4 @@ def collect_events(helper, ew):
                         "sourcetype": "jamf:jssInventory:errorCode"
                     }
 
-                    writeEvent(error_event)
+                    helper.log_error("An error occured while processing a jamf computer object with jss_id=%s from jss_url=%s" % (computer['id'], settings['jamfSettings']['jssUrl']))

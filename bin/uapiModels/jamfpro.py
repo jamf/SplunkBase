@@ -4,6 +4,7 @@ from datetime import datetime, timedelta, timezone
 import logging
 import requests
 import base64
+from splunklib.modularinput import helper
 
 class JamfPro:
     class JamfUAPIAuthToken(object):
@@ -155,20 +156,20 @@ class JamfPro:
         :return:
         """
         url = URL
-        respons_content = None
+        request_successful = None
         for i in range(0, 3):
             try:
-                if respons_content is None:
+                if request_successful:
                     response = self.helper.send_http_request(url="https://" + url,
                                                              method="GET", payload=None,
                                                              headers=self.getXMLHeaders, verify=True,
                                                              use_proxy=self.useProxy, timeout=60)
                     if response.status_code == "200" or response.status_code == 200:
-                        respons_content = "something"
+                        request_successful = True
                         return response
             except Exception as e:
-                print(e)
-                respons_content = None
+                helper.log_error("Exception occured when making request to URL=%s\n%s" % (URL, e))
+                request_successful = None
 
         return response
 
