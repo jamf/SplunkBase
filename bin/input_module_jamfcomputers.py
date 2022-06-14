@@ -56,7 +56,7 @@ def collect_events(helper, ew):
             "eventTimeFormat": helper.get_arg('event_time_format', None)
         },
         "outbound": {
-            "use_proxy": helper.get_arg('use_proxy', None),
+            "use_proxy": False,
             "verifyTLS": True,
             "retryCount": 3,
             "timeOut": 60
